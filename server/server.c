@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb 23 15:36:43 2015 bruguet Maxime
-** Last update Wed Feb 25 17:03:05 2015 bruguet Maxime
+** Last update Mon Mar  9 15:21:47 2015 bruguet Maxime
 */
 
 #include <signal.h>
@@ -29,7 +29,9 @@ void		my_write(int to_put)
   if (i > 7)
     {
       if (c == 0)
-	my_putchar('\n');
+	{
+	  my_putchar('\n');
+	}
       else
 	my_putchar(c);
       i = 0;
@@ -39,12 +41,21 @@ void		my_write(int to_put)
 
 void		sig(int sign)
 {
-  if (sign == SIGUSR1)
-    my_write(0);
-  if (sign == SIGUSR2)
-    my_write(1);
+  if (is_pid_rec == FALSE)
+    {
+      if (sign == SIGUSR1)
+	my_write_int(0);
+      else if (sign == SIGUSR2)
+	my_write_int(1);
+    }
+  if (is_pid_rec == TRUE)
+    {
+      if (sign == SIGUSR1)
+  	my_write(0);
+      else if (sign == SIGUSR2)
+  	my_write(1);
+    }
 }
-
 void		get_sig(void)
 {
   if (signal(SIGUSR1, sig) == SIG_ERR)
