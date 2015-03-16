@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Mar  9 15:06:39 2015 bruguet Maxime
-** Last update Mon Mar  9 17:42:25 2015 bruguet Maxime
+** Last update Wed Mar 11 14:32:16 2015 bruguet Maxime
 */
 
 #include <signal.h>
@@ -27,7 +27,9 @@ int		my_write_int(int to_put)
 	{
 	  my_putstr("PID DU CLIENT : ");
 	  my_putnbr(c);
-	  kill(SIGUSR2, c);
+	  my_putchar('\n');
+	  if ((kill(SIGUSR2, c)) == -1)
+	    my_error("SIGUSR2 ERROR\n");
 	  tmp = c;
 	}
       i = 0;
