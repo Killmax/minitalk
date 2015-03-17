@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 25 11:59:21 2015 bruguet Maxime
-** Last update Mon Mar 16 17:34:56 2015 bruguet Maxime
+** Last update Tue Mar 17 18:15:38 2015 bruguet Maxime
 */
 
 #include <unistd.h>
@@ -31,8 +31,8 @@ void		trad_sign(int pid, char to_send)
   c = 0;
   while (c < 8)
     {
-      usleep(1000);
       nb = (to_send >> c++) & 1;
+      usleep(750);
       send_sign(pid, nb);
     }
 }
@@ -52,11 +52,13 @@ void		treat_pid(int pid_cli, int pid_serv)
   my_putstr("PID : ");
   my_putnbr(pid_cli);
   my_putchar('\n');
-  send_pid(pid_cli, pid_serv);
 }
 
 int		main(int ac, char **av)
 {
+  pid_t		pid_serv;
+  char		*to_send;
+
   if (ac != 3)
     my_error("USAGE : ./client PID str_to_send\n");
   if (my_str_isnum(av[1]) == 0 )
@@ -66,7 +68,7 @@ int		main(int ac, char **av)
   to_send = av[2];
   if (pid_serv <= 1)
     my_error("Bad PID\n");
-  //  treat_pid(getpid(), pid_serv);
+  treat_pid(getpid(), pid_serv);
   treat_char(pid_serv, av[2]);
   return (0);
 }

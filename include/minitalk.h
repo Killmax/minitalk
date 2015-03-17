@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 25 16:38:41 2015 bruguet Maxime
-** Last update Mon Mar 16 16:16:15 2015 bruguet Maxime
+** Last update Tue Mar 17 14:24:22 2015 bruguet Maxime
 */
 
 #ifndef MINITALK_H_
@@ -13,15 +13,6 @@
 
 # define TRUE 1
 # define FALSE 0
-
-/*
-** Global variable
-*/
-
-int		pid_serv;
-char		is_pid_sent;
-char		is_pid_rec;
-char		*to_send;
 
 /*
 ** Prototypes for client binary

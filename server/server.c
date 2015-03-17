@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb 23 15:36:43 2015 bruguet Maxime
-** Last update Mon Mar 16 17:33:55 2015 bruguet Maxime
+** Last update Tue Mar 17 18:01:16 2015 bruguet Maxime
 */
 
 #include <signal.h>
@@ -16,20 +16,24 @@
 void		put_serv(void)
 {
   my_putstr("PID : ");
-  my_putnbr((int)getpid());
+  my_putnbr(getpid());
   my_putchar('\n');
 }
 
 void		my_write(int to_put)
 {
-  static char	c;
-  static int	i;
+  static unsigned char	c = 0;
+  static int	i = 0;
 
-  c += (to_put << i++);
+  c |= (to_put << i++);
   if (i > 7)
     {
       if (c == '\0')
-	my_putchar('\n');
+	{
+	  my_putchar('\n');
+	  my_putchar(c);
+	  my_putstr("END OF TRANSMISSION\n");
+	}
       else
 	my_putchar(c);
       i = 0;
@@ -39,7 +43,6 @@ void		my_write(int to_put)
 
 void		sig(int sign)
 {
-  usleep(750);
   if (sign == SIGUSR1)
     my_write(0);
   else if (sign == SIGUSR2)
@@ -59,6 +62,7 @@ int		main(int ac, char **av)
     my_error("No parameters needed\n");
   put_serv();
   get_sig();
+  signal(SIGWINCH, SIG_IGN);
   while (42)
     pause();
   (void)av;
