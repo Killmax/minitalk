@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb 23 15:36:43 2015 bruguet Maxime
-** Last update Tue Mar 17 18:01:16 2015 bruguet Maxime
+** Last update Wed Mar 18 15:39:08 2015 bruguet Maxime
 */
 
 #include <signal.h>
@@ -32,7 +32,6 @@ void		my_write(int to_put)
 	{
 	  my_putchar('\n');
 	  my_putchar(c);
-	  my_putstr("END OF TRANSMISSION\n");
 	}
       else
 	my_putchar(c);

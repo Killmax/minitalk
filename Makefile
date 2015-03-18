@@ -5,7 +5,7 @@
 ## Login   <brugue_m@epitech.net>
 ## 
 ## Started on  Wed Feb 25 16:10:03 2015 bruguet Maxime
-## Last update Mon Mar  9 15:11:17 2015 bruguet Maxime
+## Last update Wed Mar 18 15:23:03 2015 bruguet Maxime
 ##
 
 CLIENT		= ./client/client
@@ -15,12 +15,10 @@ SERVER		= ./server/server
 SRC_CLIENT	= ./client/client.c \
 		./client/my_getnbr.c \
 		./client/my_put.c \
-		./client/my_str_isnum.c \
-		./client/convert.c
+		./client/my_str_isnum.c
 
 SRC_SERVER	= ./server/server.c \
-		./server/my_put.c \
-		./server/calc.c
+		./server/my_put.c
 
 OBJ_SERVER	= $(SRC_SERVER:.c=.o)
 
