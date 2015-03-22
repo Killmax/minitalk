@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb 23 15:50:25 2015 bruguet Maxime
-** Last update Wed Feb 25 16:51:30 2015 bruguet Maxime
+** Last update Sun Mar 22 12:46:18 2015 bruguet Maxime
 */
 
 #include <unistd.h>
@@ -60,4 +60,5 @@ void		my_putstr(char *str)
 void		my_error(char *str)
 {
   write(2, str, my_strlen(str));
+  exit(1);
 }
