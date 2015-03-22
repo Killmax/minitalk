@@ -5,9 +5,10 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Mon Feb 23 15:50:25 2015 bruguet Maxime
-** Last update Sun Mar 22 12:46:18 2015 bruguet Maxime
+** Last update Sun Mar 22 13:06:53 2015 bruguet Maxime
 */
 
+#include <stdlib.h>
 #include <unistd.h>
 #include "minitalk.h"
 

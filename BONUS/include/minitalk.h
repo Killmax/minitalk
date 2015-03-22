@@ -5,7 +5,7 @@
 ** Login   <brugue_m@epitech.net>
 ** 
 ** Started on  Wed Feb 25 16:38:41 2015 bruguet Maxime
-** Last update Thu Mar 19 17:56:49 2015 bruguet Maxime
+** Last update Sun Mar 22 13:01:37 2015 bruguet Maxime
 */
 
 #ifndef MINITALK_H_
@@ -13,9 +13,10 @@
 
 # define TRUE 1
 # define FALSE 0
+# define BUFF_SIZE 32000
 
 /*
-** Prototypes for client binary
+** Prototypes for both binaries
 */
 
 void		my_error(char *);
